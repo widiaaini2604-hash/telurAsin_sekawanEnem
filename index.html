@@ -1,0 +1,1443 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Telur Asin Sekawan Enem</title>
+
+    <style>
+        :root {
+            --brown: #7a3e12;
+            --brown-dark: #4d2509;
+            --orange: #e67e22;
+            --orange-light: #fff0d0;
+            --yellow: #ffd166;
+            --green: #16a34a;
+            --cream: #fffaf0;
+            --white: #ffffff;
+            --text: #333333;
+            --muted: #666666;
+            --border: #eeeeee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(122, 62, 18, 0.97);
+            backdrop-filter: blur(10px);
+
+            color: white;
+            padding: 16px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.12);
+            color: var(--yellow);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 620px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            padding: 80px 20px;
+
+            background:
+                radial-gradient(circle at 20% 20%, #ffe9a8 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, #ffe1a3 0%, transparent 30%),
+                linear-gradient(135deg, #fff4cf, #fffaf0);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-icon {
+            width: 130px;
+            height: 130px;
+
+            margin: 0 auto 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: white;
+            border-radius: 50%;
+
+            font-size: 78px;
+
+            box-shadow:
+                0 15px 40px rgba(139, 69, 19, 0.15);
+        }
+
+        .hero h1 {
+            color: var(--brown);
+            font-size: clamp(34px, 5vw, 55px);
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            color: var(--orange);
+            font-size: clamp(21px, 3vw, 28px);
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto auto 30px;
+            color: #555;
+            font-size: 18px;
+        }
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            padding: 13px 24px;
+
+            background: linear-gradient(
+                135deg,
+                #f39c12,
+                #e67e22
+            );
+
+            color: white;
+            text-decoration: none;
+
+            border: none;
+            border-radius: 10px;
+
+            font-weight: bold;
+            font-size: 15px;
+
+            cursor: pointer;
+
+            box-shadow: 0 5px 15px rgba(230,126,34,0.25);
+
+            transition: 0.25s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(230,126,34,0.35);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            position: relative;
+
+            text-align: center;
+
+            color: var(--brown);
+
+            font-size: 34px;
+
+            margin-bottom: 45px;
+        }
+
+        .section-title::after {
+            content: "";
+
+            display: block;
+
+            width: 60px;
+            height: 4px;
+
+            background: var(--orange);
+
+            margin: 12px auto 0;
+
+            border-radius: 10px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            max-width: 950px;
+            margin: auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.07);
+
+            text-align: center;
+        }
+
+        .about p {
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        .about p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: var(--orange);
+            font-weight: bold;
+        }
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            background: white;
+
+            padding: 35px 25px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.07);
+
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-7px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: auto auto 20px;
+
+            background: var(--orange-light);
+
+            border-radius: 50%;
+
+            font-size: 42px;
+        }
+
+        .feature h3 {
+            color: var(--brown);
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            overflow: hidden;
+
+            background: white;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            height: 200px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff3c4,
+                    #ffe4a0
+                );
+
+            font-size: 90px;
+        }
+
+        .product-info {
+            padding: 28px;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            color: var(--brown);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: var(--muted);
+            min-height: 48px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: var(--green);
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        /* =========================
+           CART
+        ========================= */
+
+        .cart {
+            max-width: 900px;
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.08);
+        }
+
+        .cart h3 {
+            color: var(--brown);
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        #cartItems {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .empty-cart {
+            padding: 30px;
+            text-align: center;
+            color: #888;
+
+            background: #fafafa;
+
+            border-radius: 12px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+
+            padding: 15px;
+
+            background: #fffaf3;
+
+            border: 1px solid #f2dfc7;
+
+            border-radius: 12px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+            color: var(--brown);
+        }
+
+        .cart-item-price {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quantity-control button {
+            width: 32px;
+            height: 32px;
+
+            border: none;
+            border-radius: 7px;
+
+            background: var(--orange);
+            color: white;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .quantity-control span {
+            min-width: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .remove-btn {
+            border: none;
+            background: transparent;
+
+            color: #dc2626;
+
+            font-size: 18px;
+
+            cursor: pointer;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-top: 1px solid #ddd;
+
+            padding-top: 20px;
+
+            margin-top: 10px;
+
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        #total {
+            color: var(--green);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            max-width: 700px;
+            margin: auto;
+
+            text-align: center;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.07);
+        }
+
+        .contact p {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+
+        .whatsapp {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-top: 20px;
+
+            padding: 14px 25px;
+
+            background: #25d366;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: var(--brown-dark);
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 6px;
+        }
+
+        footer .tagline {
+            color: var(--yellow);
+        }
+
+        /* =========================
+           TOAST
+        ========================= */
+
+        .toast {
+            position: fixed;
+
+            bottom: 25px;
+            right: 25px;
+
+            background: #333;
+            color: white;
+
+            padding: 14px 20px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+            transform: translateY(100px);
+            opacity: 0;
+
+            transition: 0.3s;
+
+            z-index: 2000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 13px;
+                padding: 6px 8px;
+            }
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .features,
+            .products {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .about,
+            .cart,
+            .contact {
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .hero-icon {
+                width: 105px;
+                height: 105px;
+                font-size: 65px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cart-item {
+                flex-wrap: wrap;
+            }
+
+            .cart-item-info {
+                min-width: 100%;
+            }
+
+            .cart-total {
+                font-size: 18px;
+            }
+
+            .toast {
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            🥚 Telur Asin Sekawan Enem
+        </div>
+
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#produk">Produk</a>
+            <a href="#keranjang">🛒 Keranjang</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="beranda">
+
+        <div class="hero-content">
+
+            <div class="hero-icon">
+                🥚
+            </div>
+
+            <h1>
+                Telur Asin Sekawan Enem
+            </h1>
+
+            <h2>
+                Telur Asin Rasa Bawang
+            </h2>
+
+            <p>
+                Telur asin gurih dengan cita rasa bawang yang khas.
+                Dibuat menggunakan metode batu bata dengan bahan
+                pilihan dan proses yang terjaga.
+            </p>
+
+            <a href="#produk" class="btn">
+                🛒 Lihat Produk
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TENTANG
+    ========================== -->
+
+    <section class="section" id="tentang">
+
+        <h2 class="section-title">
+            Tentang Kami
+        </h2>
+
+        <div class="about">
+
+            <p>
+                <strong>Telur Asin Sekawan Enem</strong> merupakan usaha
+                yang menyediakan telur asin dengan
+                <span class="highlight">rasa bawang</span>.
+            </p>
+
+            <p>
+                Telur dibuat menggunakan
+                <span class="highlight">metode batu bata</span>
+                sehingga menghasilkan telur asin yang gurih,
+                lezat, dan cocok untuk lauk maupun oleh-oleh.
+            </p>
+
+            <p>
+                Kami berusaha memberikan produk yang berkualitas
+                dengan harga yang terjangkau bagi pelanggan.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KEUNGGULAN
+    ========================== -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Keunggulan Produk
+        </h2>
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🥚
+                </div>
+
+                <h3>
+                    Rasa Bawang
+                </h3>
+
+                <p>
+                    Memiliki cita rasa gurih dengan aroma
+                    bawang yang khas.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🧱
+                </div>
+
+                <h3>
+                    Metode Batu Bata
+                </h3>
+
+                <p>
+                    Diproses menggunakan metode batu bata
+                    untuk menghasilkan telur asin yang lezat.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ❤️
+                </div>
+
+                <h3>
+                    Dibuat dengan Teliti
+                </h3>
+
+                <p>
+                    Proses pembuatan dilakukan dengan
+                    memperhatikan kualitas produk.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRODUK
+    ========================== -->
+
+    <section class="section" id="produk">
+
+        <h2 class="section-title">
+            Produk Kami
+        </h2>
+
+        <div class="products">
+
+            <!-- PRODUK 1 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    🥚
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Telur Asin Rasa Bawang
+                    </h3>
+
+                    <p>
+                        Telur asin dengan rasa bawang
+                        yang gurih dan nikmat.
+                    </p>
+
+                    <div class="price">
+                        Rp4.000 / butir
+                    </div>
+
+                    <button
+                        class="btn"
+                        onclick="tambahKeranjang(
+                            'Telur Asin Rasa Bawang',
+                            4000
+                        )">
+
+                        + Keranjang
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 2 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    📦
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Paket 5 Telur
+                    </h3>
+
+                    <p>
+                        Paket hemat berisi 5 telur asin
+                        rasa bawang.
+                    </p>
+
+                    <div class="price">
+                        Rp19.000
+                    </div>
+
+                    <button
+                        class="btn"
+                        onclick="tambahKeranjang(
+                            'Paket 5 Telur',
+                            19000
+                        )">
+
+                        + Keranjang
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUK 3 -->
+
+            <div class="product-card">
+
+                <div class="product-image">
+                    📦
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Paket 10 Telur
+                    </h3>
+
+                    <p>
+                        Paket keluarga berisi 10 telur asin
+                        rasa bawang.
+                    </p>
+
+                    <div class="price">
+                        Rp37.000
+                    </div>
+
+                    <button
+                        class="btn"
+                        onclick="tambahKeranjang(
+                            'Paket 10 Telur',
+                            37000
+                        )">
+
+                        + Keranjang
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KERANJANG
+    ========================== -->
+
+    <section class="section" id="keranjang">
+
+        <h2 class="section-title">
+            🛒 Keranjang Belanja
+        </h2>
+
+        <div class="cart">
+
+            <h3>
+                Pesanan Kamu
+            </h3>
+
+            <div id="cartItems">
+
+                <div class="empty-cart">
+                    Keranjang masih kosong.
+                    <br>
+                    Silakan pilih produk terlebih dahulu.
+                </div>
+
+            </div>
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="total">
+                    Rp0
+                </span>
+
+            </div>
+
+            <button
+                class="btn checkout-btn"
+                onclick="checkout()">
+
+                💬 Pesan Sekarang via WhatsApp
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KONTAK
+    ========================== -->
+
+    <section class="section" id="kontak">
+
+        <h2 class="section-title">
+            Hubungi Kami
+        </h2>
+
+        <div class="contact">
+
+            <p>
+                📍 Telur Asin Sekawan Enem
+            </p>
+
+            <p>
+                🥚 Telur Asin Rasa Bawang
+            </p>
+
+            <p>
+                🧱 Dibuat dengan metode batu bata
+            </p>
+
+            <a
+                href="https://wa.me/6281234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="whatsapp">
+
+                💬 Chat WhatsApp
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            🥚 <strong>Telur Asin Sekawan Enem</strong>
+        </p>
+
+        <p class="tagline">
+            Gurih Telurnya, Harum Bawangnya!
+        </p>
+
+        <p>
+            © 2026 Telur Asin Sekawan Enem
+        </p>
+
+    </footer>
+
+
+    <!-- TOAST -->
+
+    <div
+        id="toast"
+        class="toast">
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        let keranjang = [];
+
+
+        /* =========================
+           TAMBAH KE KERANJANG
+        ========================= */
+
+        function tambahKeranjang(nama, harga) {
+
+            const produk = keranjang.find(
+                item => item.nama === nama
+            );
+
+            if (produk) {
+
+                produk.jumlah++;
+
+            } else {
+
+                keranjang.push({
+                    nama: nama,
+                    harga: harga,
+                    jumlah: 1
+                });
+
+            }
+
+            tampilkanKeranjang();
+
+            tampilkanToast(
+                nama + " ditambahkan ke keranjang 🛒"
+            );
+        }
+
+
+        /* =========================
+           UBAH JUMLAH
+        ========================= */
+
+        function ubahJumlah(index, perubahan) {
+
+            keranjang[index].jumlah += perubahan;
+
+            if (keranjang[index].jumlah <= 0) {
+
+                keranjang.splice(index, 1);
+
+            }
+
+            tampilkanKeranjang();
+        }
+
+
+        /* =========================
+           HAPUS PRODUK
+        ========================= */
+
+        function hapusProduk(index) {
+
+            const nama =
+                keranjang[index].nama;
+
+            keranjang.splice(index, 1);
+
+            tampilkanKeranjang();
+
+            tampilkanToast(
+                nama + " dihapus dari keranjang"
+            );
+        }
+
+
+        /* =========================
+           TAMPILKAN KERANJANG
+        ========================= */
+
+        function tampilkanKeranjang() {
+
+            const cartItems =
+                document.getElementById("cartItems");
+
+            const totalElement =
+                document.getElementById("total");
+
+
+            if (keranjang.length === 0) {
+
+                cartItems.innerHTML = `
+                    <div class="empty-cart">
+                        Keranjang masih kosong.
+                        <br>
+                        Silakan pilih produk terlebih dahulu.
+                    </div>
+                `;
+
+                totalElement.innerText = "Rp0";
+
+                return;
+            }
+
+
+            let isi = "";
+            let totalHarga = 0;
+
+
+            keranjang.forEach(
+                function(item, index) {
+
+                    const subtotal =
+                        item.harga * item.jumlah;
+
+                    totalHarga += subtotal;
+
+
+                    isi += `
+                        <div class="cart-item">
+
+                            <div class="cart-item-info">
+
+                                <div class="cart-item-name">
+                                    ${item.nama}
+                                </div>
+
+                                <div class="cart-item-price">
+                                    Rp${item.harga.toLocaleString("id-ID")}
+                                    / item
+                                </div>
+
+                            </div>
+
+
+                            <div class="quantity-control">
+
+                                <button
+                                    onclick="ubahJumlah(${index}, -1)">
+                                    −
+                                </button>
+
+                                <span>
+                                    ${item.jumlah}
+                                </span>
+
+                                <button
+                                    onclick="ubahJumlah(${index}, 1)">
+                                    +
+                                </button>
+
+                            </div>
+
+
+                            <strong>
+                                Rp${subtotal.toLocaleString("id-ID")}
+                            </strong>
+
+
+                            <button
+                                class="remove-btn"
+                                onclick="hapusProduk(${index})"
+                                title="Hapus">
+
+                                🗑️
+
+                            </button>
+
+                        </div>
+                    `;
+                }
+            );
+
+
+            cartItems.innerHTML = isi;
+
+            totalElement.innerText =
+                "Rp" +
+                totalHarga.toLocaleString("id-ID");
+        }
+
+
+        /* =========================
+           HITUNG TOTAL
+        ========================= */
+
+        function hitungTotal() {
+
+            return keranjang.reduce(
+                function(total, item) {
+
+                    return total +
+                        (item.harga * item.jumlah);
+
+                },
+                0
+            );
+        }
+
+
+        /* =========================
+           CHECKOUT WHATSAPP
+        ========================= */
+
+        function checkout() {
+
+            if (keranjang.length === 0) {
+
+                tampilkanToast(
+                    "Keranjang masih kosong."
+                );
+
+                return;
+            }
+
+
+            const totalHarga =
+                hitungTotal();
+
+
+            let pesan =
+                "Halo Telur Asin Sekawan Enem!%0A%0A" +
+                "Saya ingin memesan:%0A";
+
+
+            keranjang.forEach(
+                function(item, index) {
+
+                    const subtotal =
+                        item.harga * item.jumlah;
+
+                    pesan +=
+                        (index + 1) +
+                        ". " +
+                        item.nama +
+                        " x" +
+                        item.jumlah +
+                        " = Rp" +
+                        subtotal.toLocaleString("id-ID") +
+                        "%0A";
+                }
+            );
+
+
+            pesan +=
+                "%0A*Total: Rp" +
+                totalHarga.toLocaleString("id-ID") +
+                "*%0A%0A" +
+                "Mohon informasi untuk proses pemesanan. " +
+                "Terima kasih.";
+
+
+            /*
+                GANTI NOMOR INI
+                DENGAN NOMOR WHATSAPP TOKO
+            */
+
+            const nomorWhatsApp =
+                "6281234567890";
+
+
+            const link =
+                "https://wa.me/" +
+                nomorWhatsApp +
+                "?text=" +
+                pesan;
+
+
+            window.open(
+                link,
+                "_blank"
+            );
+        }
+
+
+        /* =========================
+           TOAST NOTIFICATION
+        ========================== */
+
+        function tampilkanToast(pesan) {
+
+            const toast =
+                document.getElementById("toast");
+
+            toast.innerText = pesan;
+
+            toast.classList.add("show");
+
+
+            setTimeout(
+                function() {
+
+                    toast.classList.remove("show");
+
+                },
+                2500
+            );
+        }
+
+    </script>
+
+</body>
+</html>
+```
